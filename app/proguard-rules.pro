@@ -3,11 +3,17 @@
 # Preserve line numbers and source file attributes for debugging
 -keepattributes SourceFile,LineNumberTable,*Annotation*,Signature
 
+# Keep all app package classes, interfaces, viewmodels, entities, and composables
+-keep class com.example.** { *; }
+-keepinterface com.example.** { *; }
+-keepclassmembers class com.example.** { *; }
+
+# DataStore keep rules
+-keep class androidx.datastore.** { *; }
+
 # Room Database keep rules
 -keep class androidx.room.** { *; }
 -keep class * extends androidx.room.RoomDatabase
--keep class com.example.data.model.** { *; }
--keep class com.example.data.db.** { *; }
 -dontwarn androidx.room.paging.**
 
 # ML Kit Document Scanner & Vision keep rules
