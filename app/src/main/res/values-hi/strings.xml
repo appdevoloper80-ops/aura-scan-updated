@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AuraScan</string>
+    <string name="top_app_bar_title">AuraScan</string>
+    <string name="scan_document_button">दस्तावेज़ स्कैन करें</string>
+    <string name="tools_section_title">टूल्स</string>
+    <string name="tool_images_to_pdf">फ़ोटो से PDF</string>
+    <string name="tool_images_to_pdf_desc">फ़ोटो को PDF में बदलें</string>
+    <string name="tool_resizer">फ़ोटो और हस्ताक्षर रिसाइज़र</string>
+    <string name="tool_resizer_desc">परीक्षा और पोर्टल के लिए रिसाइज़ करें</string>
+    <string name="tool_ocr">टेक्स्ट निकालें (OCR)</string>
+    <string name="tool_ocr_desc">डिवाइस पर टेक्स्ट पहचान</string>
+    <string name="recent_documents_title">हाल के दस्तावेज़</string>
+    <string name="empty_documents_title">अभी कोई दस्तावेज़ नहीं है</string>
+    <string name="empty_documents_desc">पहला दस्तावेज़ बनाने के लिए \'दस्तावेज़ स्कैन करें\' पर टैप करें।</string>
+    <string name="menu_rename">नाम बदलें</string>
+    <string name="menu_share">PDF साझा करें</string>
+    <string name="menu_save_to_device">डिवाइस में सहेजें</string>
+    <string name="menu_delete">हटाएं</string>
+    <string name="dialog_delete_title">दस्तावेज़ हटाएं?</string>
+    <string name="dialog_delete_message">क्या आप \"%1$s\" को हमेशा के लिए हटाना चाहते हैं? इसे वापस नहीं लाया जा सकता।</string>
+    <string name="dialog_delete_confirm">हटाएं</string>
+    <string name="dialog_cancel">रद्द करें</string>
+    <string name="dialog_rename_title">दस्तावेज़ का नाम बदलें</string>
+    <string name="dialog_rename_save">सहेजें</string>
+    <string name="document_name_hint">दस्तावेज़ का नाम</string>
+    <string name="document_saved_success">डिवाइस में सफलतापूर्वक सहेजा गया</string>
+    <string name="document_deleted_success">दस्तावेज़ हटा दिया गया</string>
+    <string name="document_renamed_success">दस्तावेज़ का नाम बदल दिया गया</string>
+    <string name="scan_cancelled">स्कैनिंग रद्द कर दी गई</string>
+    <string name="scan_failed">स्कैन विफल: %1$s</string>
+    <string name="page_count_single">1 पृष्ठ</string>
+    <string name="page_count_multiple">%1$d पृष्ठ</string>
+    <string name="page_indicator">पृष्ठ %1$d / %2$d</string>
+
+    <!-- Document viewer screen -->
+    <string name="action_extract_text">टेक्स्ट निकालें (OCR)</string>
+    <string name="action_share_pdf">PDF साझा करें</string>
+    <string name="action_save_pdf">PDF सहेजें</string>
+    <string name="action_rename">नाम बदलें</string>
+    <string name="action_delete">हटाएं</string>
+    <string name="document_loading">दस्तावेज़ लोड हो रहा है…</string>
+    <string name="document_not_found">दस्तावेज़ नहीं मिला</string>
+
+    <!-- OCR Screen -->
+    <string name="ocr_title">टेक्स्ट निकालें (OCR)</string>
+    <string name="ocr_source_document">दस्तावेज़ से</string>
+    <string name="ocr_source_gallery">गैलरी से चुनें</string>
+    <string name="ocr_lang_latin">अंग्रेज़ी / लैटिन</string>
+    <string name="ocr_lang_devanagari">हिन्दी (देवनागरी)</string>
+    <string name="ocr_extract_button">टेक्स्ट निकालें</string>
+    <string name="ocr_extracting">टेक्स्ट निकाला जा रहा है…</string>
+    <string name="ocr_no_text_found">चयनित छवि में कोई टेक्स्ट नहीं मिला।</string>
+    <string name="ocr_copy">कॉपी करें</string>
+    <string name="ocr_copied_toast">टेक्स्ट क्लिपबोर्ड पर कॉपी किया गया</string>
+    <string name="ocr_share">टेक्स्ट साझा करें</string>
+    <string name="ocr_save_txt">.txt के रूप में सहेजें</string>
+    <string name="ocr_pro_limit_title">मुफ़्त सीमा: 3 पृष्ठ</string>
+    <string name="ocr_pro_limit_desc">मुफ़्त संस्करण पहले 3 पृष्ठों से टेक्स्ट निकालता है। असीमित पृष्ठों के लिए प्रो अनलॉक करें।</string>
+    <string name="ocr_unlock_button">सभी पृष्ठ अनलॉक करें</string>
+    <string name="ocr_empty_prompt">टेक्स्ट निकालने के लिए कोई दस्तावेज़ या छवि चुनें।</string>
+
+    <!-- Images to PDF Screen -->
+    <string name="images_to_pdf_title">फ़ोटो से PDF</string>
+    <string name="select_images_button">फ़ोटो चुनें</string>
+    <string name="selected_images_count">%1$d फ़ोटो चुनी गईं</string>
+    <string name="page_size_label">पृष्ठ आकार</string>
+    <string name="page_size_a4">A4 (मानक)</string>
+    <string name="page_size_fit">छवि के अनुसार फ़िट</string>
+    <string name="page_margin_label">मार्जिन जोड़ें</string>
+    <string name="create_pdf_button">PDF बनाएं</string>
+    <string name="creating_pdf_progress">PDF बनाया जा रहा है…</string>
+    <string name="move_up">ऊपर ले जाएं</string>
+    <string name="move_down">नीचे ले जाएं</string>
+    <string name="remove_image">हटाएं</string>
+    <string name="empty_images_prompt">अभी कोई फ़ोटो नहीं चुनी गई है। गैलरी से चुनने के लिए नीचे टैप करें।</string>
+    <string name="pdf_created_success">PDF बनाया गया और हाल के दस्तावेज़ों में जोड़ा गया</string>
+
+    <!-- Photo and Signature Resizer Screen -->
+    <string name="resizer_title">फ़ोटो और हस्ताक्षर रिसाइज़र</string>
+    <string name="select_photo_button">फ़ोटो / हस्ताक्षर चुनें</string>
+    <string name="preset_label">प्रीसेट विकल्प</string>
+    <string name="preset_exam_photo">परीक्षा फ़ोटो (अधिकतम 50 KB, 200 × 230 px)</string>
+    <string name="preset_exam_sign">परीक्षा हस्ताक्षर (अधिकतम 20 KB, 140 × 60 px)</string>
+    <string name="preset_passport">पासपोर्ट फ़ोटो 35 × 45 mm (413 × 531 px)</string>
+    <string name="preset_custom">कस्टम</string>
+    <string name="width_px">चौड़ाई (px)</string>
+    <string name="height_px">ऊंचाई (px)</string>
+    <string name="max_size_kb">अधिकतम फ़ाइल आकार (KB)</string>
+    <string name="keep_aspect_ratio">पहलू अनुपात बनाए रखें</string>
+    <string name="crop_step_title">क्रॉप चयन</string>
+    <string name="crop_step_confirm">क्रॉप लागू करें</string>
+    <string name="resizing_progress">छवि अनुकूलित की जा रही है…</string>
+    <string name="resize_button">रिसाइज़ और कंप्रेस करें</string>
+    <string name="result_label">अनुकूलन परिणाम</string>
+    <string name="original_label">मूल: %1$s</string>
+    <string name="compressed_label">अनुकूलित: %1$s (%2$d × %3$d px)</string>
+    <string name="save_image_button">छवि सहेजें</string>
+    <string name="share_image_button">छवि साझा करें</string>
+    <string name="image_saved_success">छवि डिवाइस में सहेजी गई</string>
+    <string name="pro_gated_title">AuraScan प्रो सुविधा</string>
+    <string name="pro_gated_desc">कस्टम आयाम और 20 KB से कम आकार के लिए प्रो अनलॉक की आवश्यकता है।</string>
+    <string name="pro_gated_button">प्रो अनलॉक करें</string>
+    <string name="pro_unlocked_toast">इस सत्र के लिए प्रो सुविधा अनलॉक की गई!</string>
+    <string name="resizer_empty_prompt">शुरू करने के लिए अपनी गैलरी से फ़ोटो या हस्ताक्षर चुनें।</string>
+
+    <!-- Age Verification Dialog -->
+    <string name="age_check_title">आयु सत्यापन</string>
+    <string name="age_check_message">AuraScan वयस्कों के लिए है। कृपया पुष्टि करें कि आपकी आयु 18 वर्ष या उससे अधिक है।</string>
+    <string name="age_check_adult">मेरी आयु 18 या अधिक है</string>
+    <string name="age_check_underage">मेरी आयु 18 से कम है</string>
+    <string name="age_check_underage_message">AuraScan केवल वयस्कों के लिए है। ऐप अब बंद हो जाएगा।</string>
+    <string name="age_check_close_app">बाहर निकलें</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="settings_about">विवरण और कानूनी</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="privacy_policy_desc">100% ऑफ़लाइन, डिवाइस पर प्रोसेसिंग</string>
+    <string name="terms_of_use">उपयोग की शर्तें</string>
+    <string name="terms_of_use_desc">लाइसेंस और नियम पढ़ें</string>
+    <string name="ad_privacy">विज्ञापन गोपनीयता विकल्प</string>
+    <string name="rate_app">ऐप को रेट करें</string>
+    <string name="rate_app_desc">Google Play पर हमारी समीक्षा करें</string>
+    <string name="contact_support">सहायता से संपर्क करें</string>
+    <string name="contact_support_desc">डेवलपर को ईमेल भेजें</string>
+    <string name="app_version">ऐप संस्करण</string>
+    <string name="app_version_value">1.0.0 (ऑफ़लाइन संस्करण)</string>
+    <string name="back_button">वापस</string>
+    <string name="settings_icon">सेटिंग्स</string>
+    <string name="more_options">अधिक विकल्प</string>
+</resources>

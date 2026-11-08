@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ad-services-config>
+    <attestations>
+        <consent-manager-attestation />
+    </attestations>
+    <attribution-allow-list>
+        <package name="com.google.android.gms" />
+    </attribution-allow-list>
+</ad-services-config>

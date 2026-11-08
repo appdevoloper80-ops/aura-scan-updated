@@ -1,0 +1,6 @@
+{
+  "name": "AuraScan - PDF Scanner and OCR",
+  "description": "An offline, privacy-friendly document scanner, PDF toolkit, photo resizer, and OCR app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
