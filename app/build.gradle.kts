@@ -24,8 +24,8 @@ android {
     applicationId = "com.aistudio.aurascan.kxpztr"
     minSdk = 24
     targetSdk = 36
-    versionCode = (project.findProperty("VERSION_CODE") as? String)?.toInt() ?: 1
-    versionName = "1.0.0"
+    versionCode = (project.findProperty("VERSION_CODE") as? String)?.toInt() ?: 2
+    versionName = "2.0.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
