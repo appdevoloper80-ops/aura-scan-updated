@@ -87,17 +87,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val scannerOptions = GmsDocumentScannerOptions.Builder()
-            .setGalleryImportAllowed(true)
-            .setPageLimit(20)
-            .setResultFormats(
-                GmsDocumentScannerOptions.RESULT_FORMAT_JPEG,
-                GmsDocumentScannerOptions.RESULT_FORMAT_PDF
-            )
-            .setScannerMode(GmsDocumentScannerOptions.SCANNER_MODE_FULL)
-            .build()
-        val scannerClient = GmsDocumentScanning.getClient(scannerOptions)
-
         setContent {
             AuraScanTheme(darkTheme = true) {
                 val navController = rememberNavController()
@@ -149,19 +138,36 @@ class MainActivity : ComponentActivity() {
                 }
 
                 fun launchScanner() {
-                    scannerClient.getStartScanIntent(this@MainActivity)
-                        .addOnSuccessListener { intentSender ->
-                            scannerLauncher.launch(
-                                IntentSenderRequest.Builder(intentSender).build()
+                    try {
+                        val scannerOptions = GmsDocumentScannerOptions.Builder()
+                            .setGalleryImportAllowed(true)
+                            .setPageLimit(20)
+                            .setResultFormats(
+                                GmsDocumentScannerOptions.RESULT_FORMAT_JPEG,
+                                GmsDocumentScannerOptions.RESULT_FORMAT_PDF
                             )
-                        }
-                        .addOnFailureListener { e ->
-                            scope.launch {
-                                snackbarHostState.showSnackbar(
-                                    getString(R.string.scan_failed, e.localizedMessage ?: "Unknown error")
+                            .setScannerMode(GmsDocumentScannerOptions.SCANNER_MODE_FULL)
+                            .build()
+                        val scannerClient = GmsDocumentScanning.getClient(scannerOptions)
+                        scannerClient.getStartScanIntent(this@MainActivity)
+                            .addOnSuccessListener { intentSender ->
+                                scannerLauncher.launch(
+                                    IntentSenderRequest.Builder(intentSender).build()
                                 )
                             }
+                            .addOnFailureListener { e ->
+                                scope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        getString(R.string.scan_failed, e.localizedMessage ?: "Unknown error")
+                                    )
+                                }
+                            }
+                    } catch (e: Throwable) {
+                        e.printStackTrace()
+                        scope.launch {
+                            snackbarHostState.showSnackbar("Document scanner unavailable: ${e.localizedMessage}")
                         }
+                    }
                 }
 
                 // Gallery picker for "Import Gallery" tile

@@ -24,12 +24,12 @@ android {
     applicationId = "com.aistudio.aurascan.kxpztr"
     minSdk = 24
     targetSdk = 36
-    versionCode = (project.findProperty("VERSION_CODE") as? String)?.toInt() ?: 2
-    versionName = "2.0.0"
+    versionCode = (project.findProperty("VERSION_CODE") as? String)?.toInt() ?: 4
+    versionName = "4.0.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-    buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-3940256099942544~3347511713\"")
+    buildConfigField("String", "ADMOB_APP_ID", "\"ca-app-pub-6086454785172418~3347511713\"")
     buildConfigField("String", "ADMOB_BANNER_ID", "\"ca-app-pub-6086454785172418/2509415047\"")
     buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"ca-app-pub-6086454785172418/4095123179\"")
     buildConfigField("String", "ADMOB_REWARDED_ID", "\"ca-app-pub-6086454785172418/3598281802\"")
