@@ -1,40 +1,61 @@
 # Project specific ProGuard / R8 rules for AuraScan
 
-# Preserve line numbers and source file attributes for debugging
--keepattributes SourceFile,LineNumberTable,*Annotation*,Signature
+# Preserve line numbers and source file attributes for stack traces
+-keepattributes SourceFile,LineNumberTable,*Annotation*,Signature,InnerClasses,EnclosingMethod
 
-# Keep all app package classes, interfaces, viewmodels, entities, and composables
+# Keep all app package classes, models, and composables
 -keep class com.example.** { *; }
--keepinterface com.example.** { *; }
--keepclassmembers class com.example.** { *; }
 
-# DataStore keep rules
--keep class androidx.datastore.** { *; }
+# Keep ViewModel constructors for ViewModelProvider reflection
+-keepclassmembers class * extends androidx.lifecycle.ViewModel {
+    public <init>(...);
+}
+-keepclassmembers class * extends androidx.lifecycle.AndroidViewModel {
+    public <init>(android.app.Application);
+}
 
-# Room Database keep rules
+# Room Database & generated implementations
 -keep class androidx.room.** { *; }
--keep class * extends androidx.room.RoomDatabase
+-keep class * extends androidx.room.RoomDatabase { public <init>(); }
+-keep class **.*_Impl { *; }
+-keep @androidx.room.Entity class * { *; }
+-keep @androidx.room.Dao interface * { *; }
+-keepclassmembers class * {
+    @androidx.room.Dao *;
+    @androidx.room.Entity *;
+}
 -dontwarn androidx.room.paging.**
 
-# ML Kit Document Scanner & Vision keep rules
--keep class com.google.android.gms.internal.mlkit_vision_** { *; }
--keep class com.google.mlkit.vision.** { *; }
+# DataStore Preferences
+-keep class androidx.datastore.** { *; }
+-dontwarn androidx.datastore.**
+
+# ML Kit (Document Scanner, Text Recognition, Language ID, Translation)
+-keep class com.google.mlkit.** { *; }
+-keep interface com.google.mlkit.** { *; }
+-keep class com.google.android.gms.internal.mlkit_** { *; }
 -keep class com.google.android.gms.vision.** { *; }
 -keep class com.google.android.gms.common.** { *; }
+-dontwarn com.google.mlkit.**
 -dontwarn com.google.android.gms.**
 
-# Coil Image Loader keep rules
+# Coil Image Loader
 -keep class coil.** { *; }
 -dontwarn coil.**
 
 # Kotlin Coroutines & Serialization
 -keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
 -keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keep class kotlinx.coroutines.** { *; }
+-dontwarn kotlinx.coroutines.**
 -keep class kotlinx.serialization.** { *; }
 
-# Google Mobile Ads & UMP keep rules
+# Google Mobile Ads & User Messaging Platform (UMP)
 -keep class com.google.android.gms.ads.** { *; }
 -keep class com.google.android.ump.** { *; }
 -keep class com.google.ads.mediation.** { *; }
 -dontwarn com.google.android.gms.ads.**
 -dontwarn com.google.android.ump.**
+
+# FileProvider
+-keep class androidx.core.content.FileProvider { *; }

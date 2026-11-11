@@ -40,13 +40,19 @@ android {
   // and updating Android apps in AI Studio.
   signingConfigs {
     create("release") {
-      val keystorePath = keystoreProps.getProperty("KEYSTORE_PATH")
-        ?: System.getenv("KEYSTORE_PATH")
-        ?: "${rootDir}/my-upload-key.jks"
-      storeFile = file(keystorePath)
-      storePassword = keystoreProps.getProperty("KEYSTORE_PASSWORD") ?: System.getenv("STORE_PASSWORD")
-      keyAlias = keystoreProps.getProperty("KEY_ALIAS") ?: "upload"
-      keyPassword = keystoreProps.getProperty("KEY_PASSWORD") ?: System.getenv("KEY_PASSWORD")
+      val customPath = keystoreProps.getProperty("KEYSTORE_PATH") ?: System.getenv("KEYSTORE_PATH")
+      val resolvedPath = if (customPath != null && file(customPath).exists()) {
+        customPath
+      } else if (file("${rootDir}/my-upload-key.jks").exists()) {
+        "${rootDir}/my-upload-key.jks"
+      } else {
+        "${rootDir}/debug.keystore"
+      }
+      storeFile = file(resolvedPath)
+      val isCustom = resolvedPath != "${rootDir}/debug.keystore"
+      storePassword = if (isCustom) (keystoreProps.getProperty("KEYSTORE_PASSWORD") ?: System.getenv("STORE_PASSWORD")) else "android"
+      keyAlias = if (isCustom) (keystoreProps.getProperty("KEY_ALIAS") ?: "upload") else "androiddebugkey"
+      keyPassword = if (isCustom) (keystoreProps.getProperty("KEY_PASSWORD") ?: System.getenv("KEY_PASSWORD")) else "android"
     }
     create("debugConfig") {
       storeFile = file("${rootDir}/debug.keystore")
